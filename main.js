@@ -41,7 +41,7 @@ function memory_utente() {
 function memory() {
   var indovinati = [];
   for (i = 0; i < 5; i++) {
-    for (j = i; j < 5; j++) {
+    for (j = 0; j < 5; j++) {
       if (numeri_generati[i] == parseInt(numeri_memory[j])){
         var numero = parseInt(numeri_generati[i]);
         indovinati.push(numero);

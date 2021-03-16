@@ -14,15 +14,13 @@ function randomcpu() {
       numeri_generati.push(cpu);
     }
   }
-  var num_generate = numeri_generati;
-  document.getElementById("num_pc").innerHTML = num_generate + "" ;
+  $('#num_pc').text(numeri_generati + "");
   var ng_l = numeri_generati.length;
-  return numeri_generati;
 }
 
-function nascondi(){
-  $('.numeri_da_memorizzare #num_pc').hide();
-}
+// function nascondi(){
+//   $('.numeri_da_memorizzare #num_pc').hide();
+// }
 
 function memory_utente() {
   numeri_memory = [];
@@ -34,21 +32,18 @@ function memory_utente() {
       console.log("dammi un numero valido");
     }
   }
-  var num_memory = numeri_memory;
-  document.getElementById("num_ut").innerHTML = num_memory  + "" ;
+  $('#num_ut').text(numeri_memory  + "" );
   var nm_l = numeri_memory.length;
-  return numeri_memory;
+  memory()
 }
 
 
 function memory() {
-  console.log(numeri_generati);
-  console.log(numeri_memory);
-  var indovinati = [];
+  indovinati = [];
   for (i = 0; i < 5; i++) {
     for ( j = i + 1; j < 5; j++) {
-      if (numeri_generati[i] == numeri_memory[j]){
-        var numero = numeri_generati[i,j];
+      if (numeri_generati[i] == parseInt(numeri_memory[j])){
+        var numero = parseInt(numeri_generati[i]);
         indovinati.push(numero);
       }
     }

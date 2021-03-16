@@ -1,8 +1,7 @@
 $(document).ready(function(){
   randomcpu();
-  setTimeout(nascondi, 3000);
-  setTimeout(memory_utente, 3500);
-  setTimeout(memory, 8000);
+  setTimeout(nascondi, 30000);
+  setTimeout(memory_utente, 35000);
 });
 
 

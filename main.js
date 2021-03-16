@@ -1,6 +1,6 @@
 $(document).ready(function(){
   randomcpu();
-  // setTimeout(nascondi, 3000);
+  setTimeout(nascondi, 3000);
   setTimeout(memory_utente, 3500);
   setTimeout(memory, 8000);
 });
@@ -18,9 +18,9 @@ function randomcpu() {
   var ng_l = numeri_generati.length;
 }
 
-// function nascondi(){
-//   $('.numeri_da_memorizzare #num_pc').hide();
-// }
+function nascondi(){
+  $('.numeri_da_memorizzare #num_pc').hide();
+}
 
 function memory_utente() {
   numeri_memory = [];
@@ -39,9 +39,9 @@ function memory_utente() {
 
 
 function memory() {
-  indovinati = [];
+  var indovinati = [];
   for (i = 0; i < 5; i++) {
-    for ( j = i + 1; j < 5; j++) {
+    for (j = i; j < 5; j++) {
       if (numeri_generati[i] == parseInt(numeri_memory[j])){
         var numero = parseInt(numeri_generati[i]);
         indovinati.push(numero);
@@ -49,9 +49,8 @@ function memory() {
     }
   }
   console.log(indovinati);
-  document.getElementById("num_indovinati").innerHTML = indovinati + " sono i numeri indovinati";
+  $("#num_indovinati").text(indovinati + " sono i numeri indovinati");
+  $('.numeri_da_memorizzare #num_pc').text(numeri_generati + " questi erano i numeri da indovinare").show()
   num_ind = indovinati.length
-  document.getElementById("num_i").innerHTML = num_ind + " numeri indovinati";
-
-
+  $("#num_i").text(num_ind + " numeri indovinati");
 }
